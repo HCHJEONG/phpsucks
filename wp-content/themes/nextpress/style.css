@@ -1,0 +1,308 @@
+/*
+Theme Name: NextPress
+Theme URI: https://nextpress.penvot.com/
+Author: Penvot
+Description: A focused service homepage for WordPress to Next.js migration with SEO preservation.
+Requires at least: 6.4
+Tested up to: 7.1
+Requires PHP: 7.2
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: nextpress
+Tags: custom-colors, custom-logo, custom-menu, one-column, accessibility-ready
+*/
+
+:root {
+	--np-ink: #141819;
+	--np-muted: #5d6873;
+	--np-soft: #f5f7f8;
+	--np-line: #dfe5e8;
+	--np-teal: #0f766e;
+	--np-blue: #2458d3;
+	--np-amber: #c77700;
+	--np-white: #ffffff;
+	--np-radius: 8px;
+	--np-shadow: 0 18px 50px rgba(20, 24, 25, 0.08);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--np-white);
+	color: var(--np-ink);
+	font-family: Pretendard, "Noto Sans KR", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	line-height: 1.6;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.np-shell {
+	width: min(1120px, calc(100% - 40px));
+	margin: 0 auto;
+}
+
+.np-header {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	border-bottom: 1px solid rgba(223, 229, 232, 0.85);
+	background: rgba(255, 255, 255, 0.92);
+	backdrop-filter: blur(14px);
+}
+
+.np-nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 72px;
+	gap: 24px;
+}
+
+.np-brand {
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+	font-weight: 800;
+	font-size: 1.1rem;
+	letter-spacing: 0;
+}
+
+.np-brand span {
+	color: var(--np-teal);
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
+.np-menu {
+	display: flex;
+	align-items: center;
+	gap: 22px;
+	color: var(--np-muted);
+	font-size: 0.94rem;
+}
+
+.np-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 44px;
+	border: 1px solid var(--np-ink);
+	border-radius: var(--np-radius);
+	padding: 0 18px;
+	background: var(--np-ink);
+	color: var(--np-white);
+	font-weight: 700;
+}
+
+.np-button.secondary {
+	border-color: var(--np-line);
+	background: var(--np-white);
+	color: var(--np-ink);
+}
+
+.np-hero {
+	padding: 88px 0 72px;
+	background: linear-gradient(180deg, #f7faf9 0%, #ffffff 82%);
+}
+
+.np-hero-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+	align-items: center;
+	gap: 56px;
+}
+
+.np-kicker {
+	margin: 0 0 18px;
+	color: var(--np-teal);
+	font-weight: 800;
+}
+
+.np-hero h1 {
+	margin: 0;
+	max-width: 760px;
+	font-size: clamp(2.45rem, 5vw, 4.9rem);
+	line-height: 1.04;
+	letter-spacing: 0;
+}
+
+.np-lead {
+	margin: 24px 0 0;
+	max-width: 700px;
+	color: var(--np-muted);
+	font-size: 1.15rem;
+}
+
+.np-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 34px;
+}
+
+.np-proof {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 12px;
+	margin-top: 40px;
+}
+
+.np-proof div,
+.np-card {
+	border: 1px solid var(--np-line);
+	border-radius: var(--np-radius);
+	background: var(--np-white);
+}
+
+.np-proof div {
+	padding: 16px;
+	font-size: 0.92rem;
+	font-weight: 700;
+}
+
+.np-map {
+	border: 1px solid var(--np-line);
+	border-radius: var(--np-radius);
+	background: var(--np-white);
+	box-shadow: var(--np-shadow);
+	padding: 24px;
+}
+
+.np-map-row {
+	display: grid;
+	grid-template-columns: 1fr 42px 1fr;
+	align-items: center;
+	gap: 12px;
+	margin: 14px 0;
+}
+
+.np-node {
+	border: 1px solid var(--np-line);
+	border-radius: var(--np-radius);
+	padding: 16px;
+	min-height: 82px;
+	background: var(--np-soft);
+}
+
+.np-node strong {
+	display: block;
+	margin-bottom: 4px;
+}
+
+.np-node small,
+.np-muted {
+	color: var(--np-muted);
+}
+
+.np-arrow {
+	color: var(--np-teal);
+	text-align: center;
+	font-weight: 900;
+}
+
+.np-section {
+	padding: 76px 0;
+}
+
+.np-section.soft {
+	background: var(--np-soft);
+}
+
+.np-section-head {
+	max-width: 760px;
+	margin-bottom: 34px;
+}
+
+.np-section h2 {
+	margin: 0;
+	font-size: clamp(1.9rem, 3vw, 3rem);
+	line-height: 1.15;
+	letter-spacing: 0;
+}
+
+.np-section-head p {
+	margin: 16px 0 0;
+	color: var(--np-muted);
+	font-size: 1.04rem;
+}
+
+.np-grid-3 {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.np-card {
+	padding: 24px;
+}
+
+.np-card h3 {
+	margin: 0 0 10px;
+	font-size: 1.12rem;
+}
+
+.np-card p {
+	margin: 0;
+	color: var(--np-muted);
+}
+
+.np-process {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 12px;
+}
+
+.np-step {
+	border-top: 3px solid var(--np-teal);
+	padding: 18px 0 0;
+}
+
+.np-step strong {
+	display: block;
+	margin-bottom: 8px;
+}
+
+.np-note {
+	border-left: 4px solid var(--np-amber);
+	background: #fff8eb;
+	padding: 20px 24px;
+	color: #4f3612;
+}
+
+.np-footer {
+	border-top: 1px solid var(--np-line);
+	padding: 34px 0;
+	color: var(--np-muted);
+	font-size: 0.92rem;
+}
+
+@media (max-width: 860px) {
+	.np-menu {
+		display: none;
+	}
+
+	.np-hero-grid,
+	.np-grid-3,
+	.np-process {
+		grid-template-columns: 1fr;
+	}
+
+	.np-proof {
+		grid-template-columns: 1fr;
+	}
+
+	.np-map-row {
+		grid-template-columns: 1fr;
+	}
+
+	.np-arrow {
+		transform: rotate(90deg);
+	}
+}
