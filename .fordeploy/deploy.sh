@@ -35,8 +35,8 @@ mkdir -p "${DEPLOY_REMOTE_ROOT}"
 if [ ! -d "${CLEAN_REPO_DIR}/.git" ]; then
   git clone "${REPO_URL}" "${CLEAN_REPO_DIR}"
 fi
-git -C "${CLEAN_REPO_DIR}" fetch origin "${DEPLOY_BRANCH}"
-git -C "${CLEAN_REPO_DIR}" checkout "${DEPLOY_BRANCH}"
+git -C "${CLEAN_REPO_DIR}" fetch --prune origin "${DEPLOY_BRANCH}"
+git -C "${CLEAN_REPO_DIR}" checkout -B "${DEPLOY_BRANCH}" "origin/${DEPLOY_BRANCH}"
 git -C "${CLEAN_REPO_DIR}" reset --hard "origin/${DEPLOY_BRANCH}"
 git -C "${CLEAN_REPO_DIR}" clean -fdx \
   -e .env \
