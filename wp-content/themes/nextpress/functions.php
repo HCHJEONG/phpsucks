@@ -22,6 +22,7 @@ add_action(
 	'wp_enqueue_scripts',
 	function () {
 		wp_enqueue_style( 'nextpress-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_script( 'nextpress-scroll', get_theme_file_uri( 'assets/scroll.js' ), array(), wp_get_theme()->get( 'Version' ), true );
 	}
 );
 

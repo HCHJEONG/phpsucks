@@ -19,6 +19,7 @@ Tags: custom-colors, custom-logo, custom-menu, one-column, accessibility-ready
 	--np-soft: #f5f7f8;
 	--np-line: #dfe5e8;
 	--np-teal: #0f766e;
+	--np-green: #48c78e;
 	--np-blue: #2458d3;
 	--np-amber: #c77700;
 	--np-white: #ffffff;
@@ -32,7 +33,7 @@ Tags: custom-colors, custom-logo, custom-menu, one-column, accessibility-ready
 
 body {
 	margin: 0;
-	background: var(--np-white);
+	background: #050706;
 	color: var(--np-ink);
 	font-family: Pretendard, "Noto Sans KR", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	line-height: 1.6;
@@ -53,8 +54,8 @@ a {
 	position: sticky;
 	top: 0;
 	z-index: 10;
-	border-bottom: 1px solid rgba(223, 229, 232, 0.85);
-	background: rgba(255, 255, 255, 0.92);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+	background: rgba(5, 7, 6, 0.82);
 	backdrop-filter: blur(14px);
 }
 
@@ -73,6 +74,7 @@ a {
 	font-weight: 800;
 	font-size: 1.1rem;
 	letter-spacing: 0;
+	color: var(--np-white);
 }
 
 .np-brand span {
@@ -85,7 +87,7 @@ a {
 	display: flex;
 	align-items: center;
 	gap: 22px;
-	color: var(--np-muted);
+	color: rgba(255, 255, 255, 0.78);
 	font-size: 0.94rem;
 }
 
@@ -100,45 +102,73 @@ a {
 	background: var(--np-ink);
 	color: var(--np-white);
 	font-weight: 700;
+	transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.np-button:hover {
+	transform: translateY(-2px);
 }
 
 .np-button.secondary {
-	border-color: var(--np-line);
-	background: var(--np-white);
-	color: var(--np-ink);
+	border-color: rgba(255, 255, 255, 0.28);
+	background: rgba(255, 255, 255, 0.08);
+	color: var(--np-white);
 }
 
 .np-hero {
-	padding: 88px 0 72px;
-	background: linear-gradient(180deg, #f7faf9 0%, #ffffff 82%);
+	position: relative;
+	min-height: 100vh;
+	overflow: hidden;
+	padding: 122px 0 86px;
+	background:
+		linear-gradient(90deg, rgba(5, 7, 6, 0.94) 0%, rgba(5, 7, 6, 0.78) 42%, rgba(5, 7, 6, 0.24) 100%),
+		linear-gradient(180deg, rgba(5, 7, 6, 0) 70%, #ffffff 100%),
+		url("assets/migration-hero.png") center / cover no-repeat;
+	color: var(--np-white);
+}
+
+.np-hero::after {
+	position: absolute;
+	right: -12vw;
+	bottom: -18vw;
+	width: 48vw;
+	height: 48vw;
+	border-radius: 999px;
+	background: rgba(72, 199, 142, 0.18);
+	filter: blur(70px);
+	content: "";
+	pointer-events: none;
 }
 
 .np-hero-grid {
+	position: relative;
+	z-index: 1;
 	display: grid;
-	grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+	grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
 	align-items: center;
-	gap: 56px;
+	gap: 44px;
 }
 
 .np-kicker {
 	margin: 0 0 18px;
-	color: var(--np-teal);
+	color: var(--np-green);
 	font-weight: 800;
 }
 
 .np-hero h1 {
 	margin: 0;
-	max-width: 760px;
-	font-size: clamp(2.45rem, 5vw, 4.9rem);
+	max-width: 820px;
+	font-size: clamp(2.45rem, 4.6vw, 4.9rem);
 	line-height: 1.04;
 	letter-spacing: 0;
 	overflow-wrap: normal;
+	text-wrap: balance;
 }
 
 .np-lead {
 	margin: 24px 0 0;
 	max-width: 700px;
-	color: var(--np-muted);
+	color: rgba(255, 255, 255, 0.78);
 	font-size: 1.15rem;
 }
 
@@ -158,23 +188,29 @@ a {
 
 .np-proof div,
 .np-card {
-	border: 1px solid var(--np-line);
+	border: 1px solid rgba(20, 24, 25, 0.12);
 	border-radius: var(--np-radius);
 	background: var(--np-white);
 }
 
 .np-proof div {
+	border-color: rgba(255, 255, 255, 0.16);
 	padding: 16px;
+	background: rgba(0, 0, 0, 0.44);
+	color: var(--np-white);
 	font-size: 0.92rem;
 	font-weight: 700;
+	backdrop-filter: blur(10px);
 }
 
 .np-map {
-	border: 1px solid var(--np-line);
+	border: 1px solid rgba(255, 255, 255, 0.18);
 	border-radius: var(--np-radius);
-	background: var(--np-white);
-	box-shadow: var(--np-shadow);
+	background: rgba(5, 7, 6, 0.56);
+	box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
 	padding: 24px;
+	backdrop-filter: blur(18px);
+	transform: translateY(36px);
 }
 
 .np-map-row {
@@ -186,11 +222,12 @@ a {
 }
 
 .np-node {
-	border: 1px solid var(--np-line);
+	border: 1px solid rgba(255, 255, 255, 0.14);
 	border-radius: var(--np-radius);
 	padding: 16px;
 	min-height: 82px;
-	background: var(--np-soft);
+	background: rgba(255, 255, 255, 0.08);
+	color: var(--np-white);
 }
 
 .np-node strong {
@@ -200,21 +237,22 @@ a {
 
 .np-node small,
 .np-muted {
-	color: var(--np-muted);
+	color: rgba(255, 255, 255, 0.68);
 }
 
 .np-arrow {
-	color: var(--np-teal);
+	color: var(--np-green);
 	text-align: center;
 	font-weight: 900;
 }
 
 .np-section {
-	padding: 76px 0;
+	padding: 104px 0;
+	background: var(--np-white);
 }
 
 .np-section.soft {
-	background: var(--np-soft);
+	background: #f0f5f3;
 }
 
 .np-section-head {
@@ -222,10 +260,14 @@ a {
 	margin-bottom: 34px;
 }
 
+.np-section-head-wide {
+	max-width: 860px;
+}
+
 .np-section h2 {
 	margin: 0;
-	font-size: clamp(1.9rem, 3vw, 3rem);
-	line-height: 1.15;
+	font-size: clamp(2.2rem, 5vw, 4.8rem);
+	line-height: 1.06;
 	letter-spacing: 0;
 }
 
@@ -238,11 +280,13 @@ a {
 .np-grid-3 {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 16px;
+	gap: 18px;
 }
 
 .np-card {
-	padding: 24px;
+	min-height: 210px;
+	padding: 26px;
+	box-shadow: 0 14px 50px rgba(20, 24, 25, 0.07);
 }
 
 .np-card h3 {
@@ -263,7 +307,7 @@ a {
 
 .np-step {
 	border-top: 3px solid var(--np-teal);
-	padding: 18px 0 0;
+	padding: 20px 0 0;
 }
 
 .np-step strong {
@@ -281,8 +325,95 @@ a {
 .np-footer {
 	border-top: 1px solid var(--np-line);
 	padding: 34px 0;
+	background: var(--np-white);
 	color: var(--np-muted);
 	font-size: 0.92rem;
+}
+
+.np-scroll-cue {
+	position: relative;
+	display: block;
+	width: 34px;
+	height: 54px;
+	margin-top: 38px;
+	border: 1px solid rgba(255, 255, 255, 0.42);
+	border-radius: 999px;
+}
+
+.np-scroll-cue::after {
+	position: absolute;
+	top: 11px;
+	left: 50%;
+	width: 5px;
+	height: 5px;
+	border-radius: 999px;
+	background: var(--np-white);
+	content: "";
+	transform: translateX(-50%);
+	animation: npScrollDot 1.45s ease-in-out infinite;
+}
+
+.np-image-band {
+	position: relative;
+	min-height: 72vh;
+	display: flex;
+	align-items: flex-end;
+	overflow: hidden;
+	padding: 0 0 64px;
+	background:
+		linear-gradient(180deg, rgba(5, 7, 6, 0.06) 0%, rgba(5, 7, 6, 0.2) 34%, rgba(5, 7, 6, 0.84) 100%),
+		url("assets/migration-hero.png") center / cover fixed no-repeat;
+	color: var(--np-white);
+}
+
+.np-image-band p {
+	max-width: 780px;
+	margin: 0;
+	font-size: clamp(2rem, 4.5vw, 4.5rem);
+	font-weight: 800;
+	line-height: 1.08;
+}
+
+.np-reveal-ready {
+	opacity: 0;
+	transform: translateY(38px);
+	transition: opacity 720ms ease, transform 720ms ease;
+	transition-delay: var(--np-reveal-delay, 0ms);
+}
+
+.np-reveal-ready.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@keyframes npScrollDot {
+	0% {
+		opacity: 0;
+		transform: translate(-50%, 0);
+	}
+
+	35% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		transform: translate(-50%, 20px);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.np-button,
+	.np-reveal-ready,
+	.np-scroll-cue::after {
+		animation: none;
+		transition: none;
+	}
+
+	.np-reveal-ready {
+		opacity: 1;
+		transform: none;
+	}
 }
 
 @media (max-width: 860px) {
@@ -291,7 +422,11 @@ a {
 	}
 
 	.np-hero {
-		padding: 64px 0 56px;
+		min-height: auto;
+		padding: 88px 0 64px;
+		background:
+			linear-gradient(180deg, rgba(5, 7, 6, 0.72) 0%, rgba(5, 7, 6, 0.92) 64%, #ffffff 100%),
+			url("assets/migration-hero.png") center top / cover no-repeat;
 	}
 
 	.np-menu {
@@ -302,6 +437,14 @@ a {
 	.np-grid-3,
 	.np-process {
 		grid-template-columns: 1fr;
+	}
+
+	.np-hero h1 {
+		max-width: 680px;
+	}
+
+	.np-map {
+		transform: none;
 	}
 
 	.np-proof {
@@ -315,6 +458,15 @@ a {
 	.np-arrow {
 		transform: rotate(90deg);
 	}
+
+	.np-section {
+		padding: 76px 0;
+	}
+
+	.np-image-band {
+		min-height: 58vh;
+		background-attachment: scroll;
+	}
 }
 
 @media (max-width: 520px) {
@@ -327,7 +479,7 @@ a {
 	}
 
 	.np-hero {
-		padding: 48px 0;
+		padding: 72px 0 52px;
 	}
 
 	.np-hero h1 {
@@ -345,5 +497,18 @@ a {
 
 	.np-button {
 		width: 100%;
+	}
+
+	.np-map {
+		padding: 16px;
+	}
+
+	.np-section h2,
+	.np-image-band p {
+		font-size: clamp(2rem, 10vw, 3.1rem);
+	}
+
+	.np-card {
+		min-height: auto;
 	}
 }

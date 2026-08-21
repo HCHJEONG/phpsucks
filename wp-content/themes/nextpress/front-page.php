@@ -32,7 +32,7 @@
 <main>
 	<section class="np-hero">
 		<div class="np-shell np-hero-grid">
-			<div>
+			<div class="np-hero-copy np-reveal">
 				<p class="np-kicker">WordPress to Next.js</p>
 				<h1>WordPress의 SEO는 그대로, 프론트엔드는 Next.js로 더 빠르게.</h1>
 				<p class="np-lead">기존 MySQL 데이터베이스와 URL 구조를 존중하면서 검색 노출 손실을 줄이는 마이그레이션을 설계합니다. 사이트 콘텐츠를 새 post 데이터로 쌓아 보여주는 방식보다, 보존과 전환의 경계를 명확히 잡습니다.</p>
@@ -45,8 +45,9 @@
 					<div>MySQL 유지</div>
 					<div>Next.js 전환</div>
 				</div>
+				<a class="np-scroll-cue" href="#principles" aria-label="Scroll to principles"></a>
 			</div>
-			<div class="np-map" aria-label="Migration architecture diagram">
+			<div class="np-map np-reveal" aria-label="Migration architecture diagram">
 				<div class="np-map-row">
 					<div class="np-node"><strong>WordPress</strong><small>기존 관리자, 글, 미디어, 메타데이터</small></div>
 					<div class="np-arrow">→</div>
@@ -62,8 +63,8 @@
 	</section>
 
 	<section id="principles" class="np-section">
-		<div class="np-shell">
-			<div class="np-section-head">
+		<div class="np-shell np-reveal">
+			<div class="np-section-head np-section-head-wide">
 				<h2>검색 자산을 먼저 지키는 전환 원칙</h2>
 				<p>마이그레이션의 목표는 새 프레임워크 과시가 아니라, 이미 쌓인 검색 신뢰와 운영 데이터를 훼손하지 않는 것입니다.</p>
 			</div>
@@ -84,9 +85,15 @@
 		</div>
 	</section>
 
-	<section id="process" class="np-section soft">
+	<section class="np-image-band np-reveal" aria-label="Migration visual">
 		<div class="np-shell">
-			<div class="np-section-head">
+			<p>검색 자산과 운영 데이터를 보존하면서 화면만 더 빠르게 전환합니다.</p>
+		</div>
+	</section>
+
+	<section id="process" class="np-section soft">
+		<div class="np-shell np-reveal">
+			<div class="np-section-head np-section-head-wide">
 				<h2>진단부터 배포까지 작게 검증합니다</h2>
 				<p>검색 유입이 있는 사이트일수록 한 번에 갈아엎기보다 데이터, URL, 렌더링, 배포를 나누어 확인해야 합니다.</p>
 			</div>
@@ -101,8 +108,8 @@
 	</section>
 
 	<section class="np-section">
-		<div class="np-shell">
-			<div class="np-section-head">
+		<div class="np-shell np-reveal">
+			<div class="np-section-head np-section-head-wide">
 				<h2>이런 사이트에 맞습니다</h2>
 				<p>콘텐츠가 이미 검색되고 있고, WordPress 관리 경험이나 데이터 구조를 한 번에 버리기 어려운 경우에 특히 적합합니다.</p>
 			</div>
@@ -124,7 +131,7 @@
 	</section>
 
 	<section id="faq" class="np-section soft">
-		<div class="np-shell">
+		<div class="np-shell np-reveal">
 			<div class="np-section-head">
 				<h2>자주 묻는 질문</h2>
 			</div>
@@ -146,8 +153,8 @@
 	</section>
 
 	<section id="contact" class="np-section">
-		<div class="np-shell">
-			<div class="np-section-head">
+		<div class="np-shell np-reveal">
+			<div class="np-section-head np-section-head-wide">
 				<h2>기존 사이트를 먼저 보고 판단합니다</h2>
 				<p>현재 WordPress 주소, 주요 검색 유입 페이지, 유지해야 할 URL 정책을 기준으로 전환 범위를 제안합니다.</p>
 			</div>
