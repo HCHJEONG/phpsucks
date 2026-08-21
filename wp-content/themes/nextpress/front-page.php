@@ -151,7 +151,7 @@
 				<h2>기존 사이트를 먼저 보고 판단합니다</h2>
 				<p>현재 WordPress 주소, 주요 검색 유입 페이지, 유지해야 할 URL 정책을 기준으로 전환 범위를 제안합니다.</p>
 			</div>
-			<a class="np-button" href="mailto:hello@penvot.com">hello@penvot.com</a>
+			<a class="np-button" href="mailto:hcjeong@empas.com">hcjeong@empas.com</a>
 		</div>
 	</section>
 </main>
