@@ -18,7 +18,7 @@
 <header class="np-header">
 	<div class="np-shell np-nav">
 		<a class="np-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="NextPress home">
-			NextPress <span>SEO Migration</span>
+			NextPress
 		</a>
 		<nav class="np-menu" aria-label="Primary">
 			<a href="#principles">원칙</a>
@@ -57,7 +57,6 @@
 					<div class="np-arrow">→</div>
 					<div class="np-node"><strong>Next.js</strong><small>빠른 렌더링과 안정적인 배포</small></div>
 				</div>
-				<div class="np-note">서비스 홈페이지 자체는 정적 구조로 운영하고, WordPress post 목록에 의존하지 않습니다.</div>
 			</div>
 		</div>
 	</section>
@@ -160,7 +159,7 @@
 <footer class="np-footer">
 	<div class="np-shell">
 		<strong>NextPress</strong>
-		<span> | 사업자등록 정보는 실제 반영 단계에서 anguklaw.com 기준으로 확인 후 입력합니다.</span>
+		<span> | 대표 정희찬 | 사업자등록번호 105-05-48527 | 서울특별시 종로구 율곡로2길 7, 304호 (03143) | 02-3210-3330</span>
 	</div>
 </footer>
 
