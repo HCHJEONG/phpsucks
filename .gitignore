@@ -1,0 +1,49 @@
+
+# WordPress core
+/wp-admin/
+/wp-includes/
+/*.php
+/license.txt
+/readme.html
+
+# But keep project-level PHP files if explicitly needed
+# !/some-file.php
+
+# WordPress configuration / secrets
+wp-config.php
+wp-config-local.php
+
+# User uploads
+/wp-content/uploads/
+
+# Cache
+/wp-content/cache/
+/wp-content/upgrade/
+
+# WordPress generated files
+/wp-content/advanced-cache.php
+/wp-content/object-cache.php
+
+# Dependencies
+/vendor/
+node_modules/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+debug.log
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.swp
+*~
