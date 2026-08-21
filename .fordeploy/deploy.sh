@@ -74,6 +74,20 @@ test -f "${ENV_FILE}" || { echo "Missing env file: ${ENV_FILE}"; exit 1; }
 sudo cp "${REMOTE_DIR}/${COMPOSE_TRANSFER_NAME}" "${COMPOSE_FILE}"
 sudo docker load -i "${REMOTE_DIR}/${IMAGE_ARCHIVE_NAME}"
 
+# The official WordPress image declares /var/www/html as a volume. Recreate only
+# the wordpress container so that its anonymous html volume is refreshed from the
+# newly loaded image, while named volumes such as mysql_data and uploads remain.
+sudo env IMAGE_TAG="${IMAGE_TAG}" HOST_PORT="${HOST_PORT}" docker compose \
+  --env-file "${ENV_FILE}" \
+  -p "${PROJECT_NAME}" \
+  -f "${COMPOSE_FILE}" \
+  stop wordpress || true
+sudo env IMAGE_TAG="${IMAGE_TAG}" HOST_PORT="${HOST_PORT}" docker compose \
+  --env-file "${ENV_FILE}" \
+  -p "${PROJECT_NAME}" \
+  -f "${COMPOSE_FILE}" \
+  rm --force --stop --volumes wordpress || true
+
 sudo env IMAGE_TAG="${IMAGE_TAG}" HOST_PORT="${HOST_PORT}" docker compose \
   --env-file "${ENV_FILE}" \
   -p "${PROJECT_NAME}" \
